@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        XLog.i("on Kotlin Activity create")
+        XLog.wtf("on Kotlin Activity create")
         var intent= Intent(this,JavaActivity::class.java)
         startActivity(intent)
     }

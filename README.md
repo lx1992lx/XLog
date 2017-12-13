@@ -35,7 +35,17 @@ A powerful log util for android
                 XLog.i("日志正常打印");
             }
      });
-3.可以在Log中直接打印JSON：<br>
+     
+3.打印日志:<br>
+
+
+     XLog.i("a log");
+     
+  或者可以单独指定tag：<br>
+    
+    XLog.d("onCreate","a log");
+     
+4.可以在Log中直接打印JSON：<br>
    
    
      XLog.d("{\"code\":\"this is JavaActivity\",\"data\":{\"code\":123}}");
@@ -44,4 +54,7 @@ A powerful log util for android
   
   
     XLog.d("这是请求数据：{\"code\":\"this is JavaActivity\",\"data\":{\"code\":123}}");
+    
+ <br><br>
+(P.S: XLog支持类型是I、D、W、E、V、WTF类型的日志)<br>
 

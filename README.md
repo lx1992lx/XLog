@@ -1,7 +1,8 @@
 # XLog
 A powerful log util for android
 ---------------
-
+![image](https://github.com/lx1992lx/XLog/blob/master/proPic.png)
+<br><br><br>
 
 ### 主要功能<br>
   *标记Log代码位置，（在android studio中可以点击快速定位）<br>

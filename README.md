@@ -31,3 +31,13 @@ A powerful log util for android
                 XLog.i("日志正常打印");
             }
      });
+3.可以在Log中直接打印JSON：<br>
+   
+   
+     XLog.d("{\"code\":\"this is JavaActivity\",\"data\":{\"code\":123}}");
+     
+  或者是一段带着标题的JSON：<br>
+  
+  
+    XLog.d("这是请求数据：{\"code\":\"this is JavaActivity\",\"data\":{\"code\":123}}");
+

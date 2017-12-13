@@ -17,15 +17,17 @@ A powerful log util for android
 1.在build.gradle 中集成：<br>
 2.在Application的onCreate()方法里进行初始化：<br>
 
-     XLog.init(true,"123");//最简单集成
+     //最简单集成
+    XLog.init(true,"123");
+     
 
-  或者初始化一个Log打印监听器：<br>
+  或者初始化一个Log打印监听器：<br>
     
-    XLog.init(true, "123", new LogListener() {
+     XLog.init(true, "123", new LogListener() {
             @Override
             public void whenLogPrint(int type, String tag, String msg, String header) {
                 //TODO 记录日志、上传等操作
                 //这里使用XLog打印的日志不会调用whenLogPrint()
                 XLog.i("日志正常打印");
             }
-        });
+     });

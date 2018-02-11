@@ -58,3 +58,10 @@ A powerful log util for android
  <br><br>
 (P.S: XLog支持类型是I、D、W、E、V、WTF类型的日志)<br>
 
+<br><br>
+联系作者：
+<br>
+微信：lx1992lxlx
+<br>
+邮箱：1012025958@qq.com
+

@@ -17,7 +17,7 @@ A powerful log util for android
 ### 使用方法<br>
 1.在build.gradle 中集成：<br>
 
-    compile 'com.yyxk.XLog:xlog:1.0.3'
+    compile 'com.yyxk.XLog:xlog:1.0.4'
 
 2.在Application的onCreate()方法里进行初始化：<br>
 

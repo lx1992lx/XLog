@@ -10,8 +10,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        XLog.wtf("on Kotlin Activity create")
+        XLog.d("on Kotlin Activity create")
         var intent= Intent(this,JavaActivity::class.java)
         startActivity(intent)
+
+        Thread(Runnable {
+            LogUtil.i("---Thread---")
+        }).start()
     }
 }

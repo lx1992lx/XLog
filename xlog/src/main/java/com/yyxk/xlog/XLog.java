@@ -1,6 +1,5 @@
 package com.yyxk.xlog;
 
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 /**
@@ -44,12 +43,13 @@ public class XLog {
     public static String mDefautTag = "LxLog_TAG";
     public static String mGlobalTag;
     public static final String LOG_SPACE_LINE = "===================================";
-    public static String mListenerMethodName = "whenLogPrint";
+    public static String mMainThreadName="main";
 
+    public static String mListenerMethodName = "whenLogPrint";
     public static boolean IS_SHOW_LOG;//是否显示Log
     public static LogListener mLogListener;//日志打印监听器
 
-    private static final int STACK_TRACE_INDEX_5 = 5;
+    private static int STACK_TRACE_INDEX_5 = 5;
     /**
      * 初始化，建议在Application初始化时初始化
      *
@@ -80,6 +80,19 @@ public class XLog {
             throw new NullPointerException("LogListener must not be null");
         }
     }
+
+    /**
+     * 初始化
+     * @param isShowLog
+     * @param tag
+     * @param listener
+     * @param wrap 再次包装层级，需指定层级
+     */
+    public static void init(boolean isShowLog, String tag, LogListener listener,int wrap) {
+        init(isShowLog, tag,listener);
+        STACK_TRACE_INDEX_5+=wrap;
+    }
+
 
     public static void i(String tag, Object objMsg) {
         printLog(I, objMsg, tag);
@@ -136,7 +149,7 @@ public class XLog {
      * @param objMsg
      * @param tag
      */
-    private static synchronized void printLog(int type, @Nullable Object objMsg, String tag) {
+    private static synchronized void printLog(int type,Object objMsg, String tag) {
 
         if (!IS_SHOW_LOG) {
             return;
@@ -194,8 +207,12 @@ public class XLog {
         if (lineNumber < 0) {
             lineNumber = 0;
         }
+        String threadName="";
+        if(Thread.currentThread().getName().equals(mMainThreadName)){
+            threadName="{ threadId="+Thread.currentThread().getId()+" }";
+        }
 
-        header = "[ (" + fileName + ":" + lineNumber + ")#" + methodName + " ] ";
+        header = "[ (" + fileName + ":" + lineNumber + ")#" + methodName +threadName+ " ] ";
 
         return new String[]{header,methodName};
     }

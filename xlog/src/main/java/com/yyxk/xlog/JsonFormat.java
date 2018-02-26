@@ -37,6 +37,8 @@ import org.json.JSONObject;
 public class JsonFormat {
     /**
      * 得到格式化json数据  退格用\t 换行用\r
+     * @param jsonStr 检测JsonStr
+     * @return 返回格式化后的Json
      */
     public static String format(String jsonStr) {
         int level = 0;
@@ -82,8 +84,8 @@ public class JsonFormat {
 
     /**
      * 检测是否有JSON
-     * @param msg
-     * @return
+     * @param msg 检测String
+     * @return 是否有json
      */
     public static String detectJson(String msg) {
         if(isJSON(msg)){
@@ -108,8 +110,8 @@ public class JsonFormat {
 
     /**
      * 字符串是否是JSON字符串
-     * @param str
-     * @return
+     * @param str 检测String
+     * @return 是否是JSON
      */
     public static boolean isJSON(String str) {
         try {

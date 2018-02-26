@@ -45,8 +45,8 @@ public class MyApplication extends Application {
             public void whenLogPrint(int type, String tag, String msg, String header) {
                 //TODO 记录日志、上传等操作
                 //这里使用XLog打印的日志不会调用whenLogPrint()
-                XLog.i("日志正常打印");
+                LogUtil.i("日志正常打印");
             }
-        });
+        },1);
     }
 }
